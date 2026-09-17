@@ -1,0 +1,12 @@
+node_modules/
+output/
+tmp/
+motion-library/qa/
+motion-library/output/
+*.log
+.env
+.env.*
+!.env.example
+**/audio/*.wav
+**/audio/*.mp3
+**/assets/recordings/*.mp4

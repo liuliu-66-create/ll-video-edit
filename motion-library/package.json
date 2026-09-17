@@ -1,0 +1,32 @@
+{
+  "name": "liuliu-video-motion-library",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render:multi-03-torn": "remotion render src/index.ts MultiPointTorn03 previews/multi-point-03-torn-v1.mp4 --props=presets/multi-point-03.json --codec=h264 --crf=16",
+    "render:multi-05-torn": "remotion render src/index.ts MultiPointTorn03 previews/multi-point-05-torn-v1.mp4 --props=presets/multi-point-05.json --codec=h264 --crf=16",
+    "render:multi-04-torn": "remotion render src/index.ts MultiPointTorn03 previews/multi-point-04-torn-v1.mp4 --props=presets/multi-point-04.json --codec=h264 --crf=16",
+    "render:multi-staggered-03": "remotion render src/index.ts MultiPointStaggeredMemo previews/multi-point-staggered-memo-v1.mp4 --props=presets/multi-point-staggered-03.json --codec=h264 --crf=16",
+    "render:multi-stamp-label-03": "remotion render src/index.ts MultiPointStampLabel previews/multi-point-stamp-label-03-v2.mp4 --props=presets/multi-point-stamp-label-03.json --codec=h264 --crf=16",
+    "render:multi-index-tabs-04": "remotion render src/index.ts MultiPointIndexTabs previews/multi-point-index-tabs-04-v1.mp4 --props=presets/multi-point-index-tabs-04.json --codec=h264 --crf=16",
+    "render:multi-burst-stickers-05": "remotion render src/index.ts MultiPointBurstStickers previews/multi-point-burst-stickers-05-v4.mp4 --props=presets/multi-point-burst-stickers-05.json --codec=h264 --crf=16",
+    "render:process-zigzag-03": "remotion render src/index.ts ProcessFlowZigzag previews/process-flow-zigzag-03-v1.mp4 --props=presets/process-flow-zigzag-03.json --codec=h264 --crf=16",
+    "render:before-after": "remotion render src/index.ts BeforeAfterCompare previews/before-after-compare-v1.mp4 --props=presets/before-after-compare.json --codec=h264 --crf=16",
+    "render:concept-radial-github": "remotion render src/index.ts ConceptExplainerRadialGithub previews/concept-explainer-radial-github-v2.mp4 --codec=h264 --crf=16",
+    "render:concept-topdown-github": "remotion render src/index.ts ConceptExplainerTopDownGithub previews/concept-explainer-topdown-github-v1.mp4 --codec=h264 --crf=16",
+    "render:key-conclusion": "remotion render src/index.ts KeyConclusion previews/key-conclusion-v1.mp4 --props=presets/key-conclusion.json --codec=h264 --crf=16",
+    "render:key-conclusion-editorial-collage": "remotion render src/index.ts KeyConclusionEditorialCollage previews/key-conclusion-editorial-collage-v2.mp4 --props=presets/key-conclusion-editorial-collage.json --codec=h264 --crf=16",
+    "render:screen-recording-frameless": "remotion render src/index.ts ScreenRecordingTransition previews/screen-recording-transition-frameless-v1.mp4 --props=presets/screen-recording-frameless-styleframe.json --codec=h264 --crf=16"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.484",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "remotion": "4.0.484"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.17",
+    "typescript": "6.0.3"
+  }
+}

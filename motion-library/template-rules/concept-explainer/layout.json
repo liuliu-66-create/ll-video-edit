@@ -1,0 +1,29 @@
+{
+  "canvas": {"width": 1920, "height": 1080},
+  "variants": {
+    "radial": {
+      "composition": "ConceptExplainerRadialGithub",
+      "core": {"position": [558, 286], "width": 805, "titleSafeArea": [125, 112, 550, 166], "definitionSafeArea": [142, 267, 515, 90]},
+      "left": {"position": [42, 72], "width": 610, "textSafeArea": [70, 91, 440, 145]},
+      "right": {"position": [1256, 68], "width": 620, "textSafeArea": [78, 101, 470, 142]},
+      "bottom": {"position": [635, 705], "width": 650, "textSafeArea": [98, 78, 455, 150]},
+      "relation": "outer-labels-explain-core"
+    },
+    "topdown": {
+      "composition": "ConceptExplainerTopDownGithub",
+      "top": {"position": [510, 20], "width": 900, "textSafeArea": [140, 94, 625, 160]},
+      "definition": {"position": [300, 365], "width": 1320, "textSafeArea": [140, 96, 1040, 148]},
+      "bottomLeft": {"position": [45, 700], "width": 500, "textSafeArea": [45, 111, 405, 122]},
+      "bottomMiddle": {"position": [700, 735], "width": 520, "textSafeArea": [70, 94, 380, 108]},
+      "bottomRight": {"position": [1370, 680], "width": 500, "textSafeArea": [44, 132, 412, 120]},
+      "arrows": {
+        "left": {"direction": "down-left", "target": "bottomLeft"},
+        "middle": {"direction": "down", "target": "bottomMiddle"},
+        "right": {"direction": "down-right", "target": "bottomRight"}
+      },
+      "relation": "concept-to-definition-to-attributes"
+    }
+  },
+  "textRule": "center-on-foreground-paper; each-asset-has-own-safe-area; shrink-only"
+}
+

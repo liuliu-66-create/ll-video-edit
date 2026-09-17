@@ -1,0 +1,158 @@
+{
+  "libraryName": "六六视频动效素材库",
+  "style": "neutral-newspaper-v1",
+  "aspectRatio": "16:9",
+  "templates": [
+    {
+      "id": "multi-point-list",
+      "name": "多点列举",
+      "composition": "MultiPointTorn03",
+      "supports": {
+        "itemCount": [2, 3, 4, 5, 6],
+        "editable": ["items[].text", "items[].icon", "duration"],
+        "validatedVariants": ["torn-list", "staggered-memo", "stamp-label-wall", "index-tabs", "burst-stickers"]
+      },
+      "preview": "previews/multi-point-03-torn-v1.mp4",
+      "staggeredMemoVariant": {
+        "id": "staggered-memo",
+        "composition": "MultiPointStaggeredMemo",
+        "preset": "presets/multi-point-staggered-03.json",
+        "layout": "template-rules/multi-point-list/staggered-memo-layout.json",
+        "reference": "previews/multi-point-staggered-reference-v1.png",
+        "preview": "previews/multi-point-staggered-memo-v1.mp4",
+        "status": "validated"
+      },
+      "stampLabelVariant": {
+        "id": "stamp-label-wall",
+        "composition": "MultiPointStampLabel",
+        "preset": "presets/multi-point-stamp-label-03.json",
+        "layout": "template-rules/multi-point-list/stamp-label-layout.json",
+        "reference": "previews/multi-point-stamp-label-wall-reference-v1.png",
+        "preview": "previews/multi-point-stamp-label-03-v2.mp4",
+        "status": "validated"
+      },
+      "indexTabsVariant": {
+        "id": "index-tabs",
+        "composition": "MultiPointIndexTabs",
+        "preset": "presets/multi-point-index-tabs-04.json",
+        "layout": "template-rules/multi-point-list/index-tabs-layout.json",
+        "reference": "previews/multi-point-index-tabs-reference-v1.png",
+        "preview": "previews/multi-point-index-tabs-04-v1.mp4",
+        "status": "validated"
+      },
+      "burstStickersVariant": {
+        "id": "burst-stickers",
+        "composition": "MultiPointBurstStickers",
+        "preset": "presets/multi-point-burst-stickers-05.json",
+        "layout": "template-rules/multi-point-list/burst-stickers-layout.json",
+        "reference": "previews/multi-point-burst-stickers-reference-v1.png",
+        "preview": "previews/multi-point-burst-stickers-05-v4.mp4",
+        "status": "validated"
+      },
+      "rules": "DESIGN_RULES.md",
+      "templateRules": "template-rules/multi-point-list/TEMPLATE.md",
+      "layout": "template-rules/multi-point-list/layout.json",
+      "status": "validated"
+    },
+    {
+      "id": "process-flow-zigzag",
+      "name": "折线流程",
+      "composition": "ProcessFlowZigzag",
+      "supports": {"itemCount": [2, 3, 4, 5, 6], "editable": ["steps[]", "duration"]},
+      "preview": "previews/process-flow-zigzag-03-v1.mp4",
+      "rules": "DESIGN_RULES.md",
+      "templateRules": "template-rules/process-flow/TEMPLATE.md",
+      "layout": "template-rules/process-flow/layout.json",
+      "status": "validated"
+    },
+    {
+      "id": "process-flow-journey",
+      "name": "弯曲旅程",
+      "composition": "ProcessFlowJourney",
+      "supports": {"itemCount": [2, 3, 4, 5, 6], "editable": ["steps[]", "duration"]},
+      "preview": "previews/process-flow-journey-03-v1.mp4",
+      "rules": "DESIGN_RULES.md",
+      "templateRules": "template-rules/process-flow/TEMPLATE.md",
+      "layout": "template-rules/process-flow/layout.json",
+      "status": "validated"
+    },
+    {
+      "id": "before-after-compare",
+      "name": "前后对比",
+      "composition": "BeforeAfterCompare",
+      "supports": {
+        "itemCount": [2],
+        "editable": ["before.title", "before.text", "after.title", "after.text", "duration"],
+        "validatedVariants": ["collage-arrow"]
+      },
+      "preview": "previews/before-after-compare-v1.mp4",
+      "rules": "DESIGN_RULES.md",
+      "templateRules": "template-rules/before-after-compare/TEMPLATE.md",
+      "layout": "template-rules/before-after-compare/layout.json",
+      "status": "validated"
+    },
+    {
+      "id": "concept-explainer",
+      "name": "概念解释",
+      "composition": "ConceptExplainerRadialGithub",
+      "supports": {
+        "itemCount": [2, 3, 4],
+        "editable": ["core.title", "core.definition", "points[].title", "duration"],
+        "variants": ["radial", "topdown"]
+      },
+      "variantPreviews": {
+        "radial": "previews/concept-explainer-radial-github-v2.mp4",
+        "topdown": "previews/concept-explainer-topdown-github-v1.mp4"
+      },
+      "preview": "previews/concept-explainer-radial-github-v2.mp4",
+      "rules": "DESIGN_RULES.md",
+      "templateRules": "template-rules/concept-explainer/TEMPLATE.md",
+      "layout": "template-rules/concept-explainer/layout.json",
+      "status": "validated"
+    },
+    {
+      "id": "key-conclusion",
+      "name": "重点结论",
+      "composition": "KeyConclusion",
+      "supports": {
+        "itemCount": [1],
+        "editable": ["label", "firstPart", "secondPart", "note", "duration"],
+        "validatedVariants": ["central-quote", "editorial-collage"]
+      },
+      "preview": "previews/key-conclusion-v1.mp4",
+      "styleframe": "previews/key-conclusion-styleframe-v1.png",
+      "variantPreviews": [
+        {
+          "id": "editorial-collage",
+          "composition": "KeyConclusionEditorialCollage",
+          "preset": "presets/key-conclusion-editorial-collage.json",
+          "layout": "template-rules/key-conclusion/editorial-collage-layout.json",
+          "reference": "references/key-conclusion/reference-01-editorial-collage.png",
+          "preview": "previews/key-conclusion-editorial-collage-v2.mp4",
+          "status": "validated"
+        }
+      ],
+      "rules": "DESIGN_RULES.md",
+      "templateRules": "template-rules/key-conclusion/TEMPLATE.md",
+      "layout": "template-rules/key-conclusion/layout.json",
+      "status": "validated"
+    },
+    {
+      "id": "screen-recording-transition",
+      "name": "真实录屏展示",
+      "composition": "ScreenRecordingTransition",
+      "supports": {
+        "itemCount": [1],
+        "editable": ["title", "videoSrc", "videoWidth", "videoHeight", "icon", "duration"],
+        "icons": ["cursor", "hand", "keyboard", "magnifier", "gear", "play"]
+      },
+      "preview": "previews/screen-recording-transition-frameless-v1.mp4",
+      "styleframe": "previews/screen-recording-frameless-styleframe-v1.png",
+      "preset": "presets/screen-recording-frameless-styleframe.json",
+      "rules": "DESIGN_RULES.md",
+      "templateRules": "template-rules/screen-recording-transition/TEMPLATE.md",
+      "layout": "template-rules/screen-recording-transition/layout.json",
+      "status": "validated"
+    }
+  ]
+}

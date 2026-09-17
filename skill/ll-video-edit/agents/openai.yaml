@@ -1,0 +1,7 @@
+interface:
+  display_name: "LL Video Edit"
+  short_description: "Guide Codex and Remotion video editing in six steps"
+  default_prompt: "Use $ll-video-edit to guide me through creating an automated tutorial video step by step."
+
+policy:
+  allow_implicit_invocation: true
