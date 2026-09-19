@@ -10,25 +10,15 @@
 
 ## 先看效果
 
-下面是当前素材库中已经确认的动效样片。点击图片即可播放，不需要先下载项目。
+下面是当前素材库中已经确认的“投入累积／资源消耗”动效样片。点击图片即可播放，不需要先下载项目。
 
 <p align="center">
-  <a href="./motion-library/previews/timeline-collage-dynamic-v2.mp4">
-    <img src="./motion-library/previews/timeline-collage-approved-styleframe.png" width="49%" alt="时间线动效样片">
-  </a>
-  <a href="./motion-library/previews/order-hierarchy-dynamic-v1.mp4">
-    <img src="./motion-library/previews/order-hierarchy-default-final.png" width="49%" alt="层级关系动效样片">
+  <a href="./motion-library/previews/cost-accumulation-dynamic-v2.mp4">
+    <img src="./motion-library/previews/cost-accumulation-styleframe-v1.png" width="100%" alt="投入累积与资源消耗动效样片">
   </a>
 </p>
 
-还可以查看：
-
-- [投入累积／资源消耗动效](./motion-library/previews/cost-accumulation-dynamic-v2.mp4)
-- [双向趋势动效](./motion-library/previews/opposing-trends-dynamic-v1.mp4)
-- [前后对比动效](./motion-library/previews/before-after-compare-v1.mp4)
-- [真实录屏展示动效](./motion-library/previews/screen-recording-transition-frameless-v1.mp4)
-
-以上视频用于展示素材库中的视觉结构。正式成片不会直接剪入这些预览视频，而是调用模板源码，替换成你当前视频的文字、图片和真实录屏。
+这个视频用于展示素材库中的一种视觉结构。正式成片不会直接剪入预览视频，而是调用模板源码，替换成你当前视频的文字、图片和真实录屏。
 
 ## 你需要提供什么
 
