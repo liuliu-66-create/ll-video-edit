@@ -12,11 +12,7 @@
 
 下面是当前素材库中已经确认的“投入累积／资源消耗”动效样片。点击图片即可播放，不需要先下载项目。
 
-<p align="center">
-  <a href="./motion-library/previews/cost-accumulation-dynamic-v2.mp4">
-    <img src="./motion-library/previews/cost-accumulation-styleframe-v1.png" width="100%" alt="投入累积与资源消耗动效样片">
-  </a>
-</p>
+https://github.com/user-attachments/assets/295ed528-458e-40f5-9a94-89e9366298ca
 
 这个视频用于展示素材库中的一种视觉结构。正式成片不会直接剪入预览视频，而是调用模板源码，替换成你当前视频的文字、图片和真实录屏。
 
