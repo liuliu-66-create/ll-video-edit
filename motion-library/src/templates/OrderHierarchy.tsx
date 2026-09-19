@@ -87,7 +87,7 @@ export const OrderHierarchy: React.FC<OrderHierarchyProps> = ({
           {level.imageSrc ? <Img src={staticFile(level.imageSrc)} style={{width:'100%',height:'100%',
             objectFit:'contain',objectPosition:'center bottom'}}/> :
             <SpriteCrop asset="assets/order-hierarchy-people-v2.png" sheetWidth={1672} sheetHeight={941}
-              crop={people[item.key]} width={item.width}/>} 
+              crop={people[item.key]} width={item.width}/>}
         </div>
         <div style={{position:'absolute',left:item.left-20,top:item.titleTop,
           width:item.width+40,textAlign:'center',fontFamily:brand.fontFamily}}>
