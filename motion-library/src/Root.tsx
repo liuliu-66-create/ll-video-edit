@@ -12,10 +12,20 @@ import {ConceptExplainerTopDown} from './templates/ConceptExplainerTopDown';
 import {KeyConclusion} from './templates/KeyConclusion';
 import {KeyConclusionEditorialCollage} from './templates/KeyConclusionEditorialCollage';
 import {ScreenRecordingTransition} from './templates/ScreenRecordingTransition';
+import {TimelineEvents} from './templates/TimelineEvents';
+import {CostAccumulation} from './templates/CostAccumulation';
+import {OpposingTrends} from './templates/OpposingTrends';
+import {OrderHierarchy} from './templates/OrderHierarchy';
 import {multiPoint03} from './presets';
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="OrderHierarchy" component={OrderHierarchy}
+      durationInFrames={180} fps={30} width={1920} height={1080} defaultProps={{}} />
+    <Composition id="OpposingTrends" component={OpposingTrends}
+      durationInFrames={180} fps={30} width={1920} height={1080} defaultProps={{}} />
+    <Composition id="CostAccumulation" component={CostAccumulation}
+      durationInFrames={240} fps={30} width={1920} height={1080} defaultProps={{}} />
     <Composition
       id="MultiPointTorn03"
       component={MultiPointTornList}
@@ -190,6 +200,22 @@ export const Root: React.FC = () => (
         videoWidth: 1658,
         videoHeight: 1080,
         icon: 'cursor' as const,
+      }}
+    />
+    <Composition
+      id="TimelineEvents"
+      component={TimelineEvents}
+      durationInFrames={180}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{
+        events: [
+          {time: '交片后', title: '开始催款', illustration: 'delivery' as const},
+          {time: '年初', title: '反复沟通', illustration: 'calendar' as const},
+          {time: '年中', title: '继续拖延', illustration: 'waiting' as const},
+          {time: '6月', title: '彻底失联', illustration: 'disconnected' as const},
+        ],
       }}
     />
   </>

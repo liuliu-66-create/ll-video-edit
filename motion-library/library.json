@@ -4,13 +4,111 @@
   "aspectRatio": "16:9",
   "templates": [
     {
+      "id": "opposing-trends",
+      "name": "双向趋势",
+      "family": "opposing-trends",
+      "layoutPattern": "diverging-curves-with-collage",
+      "semanticTypes": [
+        "opposing-qualitative-trends"
+      ],
+      "avoidFor": [
+        "exact-data-chart",
+        "timeline",
+        "ordered-process"
+      ],
+      "status": "validated",
+      "composition": "OpposingTrends",
+      "preset": "presets/opposing-trends-default.json",
+      "preview": "previews/opposing-trends-dynamic-v1.mp4",
+      "rules": "template-rules/opposing-trends/TEMPLATE.md",
+      "layout": "template-rules/opposing-trends/layout.json",
+      "supports": {
+        "editable": [
+          "risingTitle",
+          "risingCaption",
+          "fallingTitle",
+          "fallingCaption",
+          "resourceCounts",
+          "risingArt",
+          "fallingArt"
+        ],
+        "validatedVariants": [
+          "quality-and-price"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed"
+      }
+    },
+    {
+      "id": "cost-accumulation",
+      "name": "投入累积／资源消耗",
+      "family": "accumulation-depletion",
+      "layoutPattern": "asymmetric-pile-and-resource",
+      "semanticTypes": [
+        "repeated-effort-cost",
+        "accumulation-and-depletion"
+      ],
+      "avoidFor": [
+        "timeline",
+        "ordered-process",
+        "unrelated-parallel-points"
+      ],
+      "status": "validated",
+      "composition": "CostAccumulation",
+      "preset": "presets/cost-accumulation-default.json",
+      "preview": "previews/cost-accumulation-dynamic-v2.mp4",
+      "rules": "template-rules/cost-accumulation/TEMPLATE.md",
+      "layout": "template-rules/cost-accumulation/layout.json",
+      "supports": {
+        "editable": [
+          "leftTitle",
+          "leftCaption",
+          "rightTitle",
+          "rightCaption",
+          "resourceCount",
+          "remainingCount",
+          "art"
+        ],
+        "aspectRatios": [
+          "16:9"
+        ],
+        "validatedVariants": [
+          "photo-proofs-and-coins"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed"
+      }
+    },
+    {
       "id": "multi-point-list",
       "name": "多点列举",
       "composition": "MultiPointTorn03",
       "supports": {
-        "itemCount": [2, 3, 4, 5, 6],
-        "editable": ["items[].text", "items[].icon", "duration"],
-        "validatedVariants": ["torn-list", "staggered-memo", "stamp-label-wall", "index-tabs", "burst-stickers"]
+        "itemCount": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "editable": [
+          "items[].text",
+          "items[].icon",
+          "duration"
+        ],
+        "validatedVariants": [
+          "torn-list",
+          "staggered-memo",
+          "stamp-label-wall",
+          "index-tabs",
+          "burst-stickers"
+        ]
       },
       "preview": "previews/multi-point-03-torn-v1.mp4",
       "staggeredMemoVariant": {
@@ -52,53 +150,148 @@
       "rules": "DESIGN_RULES.md",
       "templateRules": "template-rules/multi-point-list/TEMPLATE.md",
       "layout": "template-rules/multi-point-list/layout.json",
-      "status": "validated"
+      "status": "validated",
+      "family": "multi-point",
+      "layoutPattern": "list-and-cards",
+      "semanticTypes": [
+        "parallel-points",
+        "checklist",
+        "multiple-results"
+      ],
+      "avoidFor": [
+        "ordered-process",
+        "timeline",
+        "hierarchy",
+        "cycle"
+      ]
     },
     {
       "id": "process-flow-zigzag",
       "name": "折线流程",
       "composition": "ProcessFlowZigzag",
-      "supports": {"itemCount": [2, 3, 4, 5, 6], "editable": ["steps[]", "duration"]},
+      "supports": {
+        "itemCount": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "editable": [
+          "steps[]",
+          "duration"
+        ]
+      },
       "preview": "previews/process-flow-zigzag-03-v1.mp4",
       "rules": "DESIGN_RULES.md",
       "templateRules": "template-rules/process-flow/TEMPLATE.md",
       "layout": "template-rules/process-flow/layout.json",
-      "status": "validated"
+      "status": "validated",
+      "family": "process-flow",
+      "layoutPattern": "zigzag-route",
+      "semanticTypes": [
+        "ordered-process",
+        "sequential-steps"
+      ],
+      "avoidFor": [
+        "timeline",
+        "hierarchy",
+        "cycle",
+        "price-erosion"
+      ]
     },
     {
       "id": "process-flow-journey",
       "name": "弯曲旅程",
       "composition": "ProcessFlowJourney",
-      "supports": {"itemCount": [2, 3, 4, 5, 6], "editable": ["steps[]", "duration"]},
+      "supports": {
+        "itemCount": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "editable": [
+          "steps[]",
+          "duration"
+        ]
+      },
       "preview": "previews/process-flow-journey-03-v1.mp4",
       "rules": "DESIGN_RULES.md",
       "templateRules": "template-rules/process-flow/TEMPLATE.md",
       "layout": "template-rules/process-flow/layout.json",
-      "status": "validated"
+      "status": "validated",
+      "family": "process-flow",
+      "layoutPattern": "journey-route",
+      "semanticTypes": [
+        "ordered-process",
+        "sequential-steps"
+      ],
+      "avoidFor": [
+        "timeline",
+        "hierarchy",
+        "cycle",
+        "price-erosion"
+      ]
     },
     {
       "id": "before-after-compare",
       "name": "前后对比",
       "composition": "BeforeAfterCompare",
       "supports": {
-        "itemCount": [2],
-        "editable": ["before.title", "before.text", "after.title", "after.text", "duration"],
-        "validatedVariants": ["collage-arrow"]
+        "itemCount": [
+          2
+        ],
+        "editable": [
+          "before.title",
+          "before.text",
+          "after.title",
+          "after.text",
+          "duration"
+        ],
+        "validatedVariants": [
+          "collage-arrow"
+        ]
       },
       "preview": "previews/before-after-compare-v1.mp4",
       "rules": "DESIGN_RULES.md",
       "templateRules": "template-rules/before-after-compare/TEMPLATE.md",
       "layout": "template-rules/before-after-compare/layout.json",
-      "status": "validated"
+      "status": "validated",
+      "family": "before-after",
+      "layoutPattern": "collage-arrow",
+      "semanticTypes": [
+        "before-after",
+        "binary-contrast",
+        "opposite-trends"
+      ],
+      "avoidFor": [
+        "timeline",
+        "hierarchy",
+        "cycle"
+      ]
     },
     {
       "id": "concept-explainer",
       "name": "概念解释",
       "composition": "ConceptExplainerRadialGithub",
       "supports": {
-        "itemCount": [2, 3, 4],
-        "editable": ["core.title", "core.definition", "points[].title", "duration"],
-        "variants": ["radial", "topdown"]
+        "itemCount": [
+          2,
+          3,
+          4
+        ],
+        "editable": [
+          "core.title",
+          "core.definition",
+          "points[].title",
+          "duration"
+        ],
+        "variants": [
+          "radial",
+          "topdown"
+        ]
       },
       "variantPreviews": {
         "radial": "previews/concept-explainer-radial-github-v2.mp4",
@@ -108,16 +301,39 @@
       "rules": "DESIGN_RULES.md",
       "templateRules": "template-rules/concept-explainer/TEMPLATE.md",
       "layout": "template-rules/concept-explainer/layout.json",
-      "status": "validated"
+      "status": "validated",
+      "family": "concept-explainer",
+      "layoutPattern": "radial-or-topdown",
+      "semanticTypes": [
+        "core-and-explanations",
+        "definition",
+        "concept-breakdown"
+      ],
+      "avoidFor": [
+        "timeline",
+        "ordered-process",
+        "price-erosion"
+      ]
     },
     {
       "id": "key-conclusion",
       "name": "重点结论",
       "composition": "KeyConclusion",
       "supports": {
-        "itemCount": [1],
-        "editable": ["label", "firstPart", "secondPart", "note", "duration"],
-        "validatedVariants": ["central-quote", "editorial-collage"]
+        "itemCount": [
+          1
+        ],
+        "editable": [
+          "label",
+          "firstPart",
+          "secondPart",
+          "note",
+          "duration"
+        ],
+        "validatedVariants": [
+          "central-quote",
+          "editorial-collage"
+        ]
       },
       "preview": "previews/key-conclusion-v1.mp4",
       "styleframe": "previews/key-conclusion-styleframe-v1.png",
@@ -135,16 +351,44 @@
       "rules": "DESIGN_RULES.md",
       "templateRules": "template-rules/key-conclusion/TEMPLATE.md",
       "layout": "template-rules/key-conclusion/layout.json",
-      "status": "validated"
+      "status": "validated",
+      "family": "key-conclusion",
+      "layoutPattern": "central-statement",
+      "semanticTypes": [
+        "single-conclusion",
+        "warning",
+        "transition"
+      ],
+      "avoidFor": [
+        "multiple-points",
+        "timeline",
+        "hierarchy"
+      ]
     },
     {
       "id": "screen-recording-transition",
       "name": "真实录屏展示",
       "composition": "ScreenRecordingTransition",
       "supports": {
-        "itemCount": [1],
-        "editable": ["title", "videoSrc", "videoWidth", "videoHeight", "icon", "duration"],
-        "icons": ["cursor", "hand", "keyboard", "magnifier", "gear", "play"]
+        "itemCount": [
+          1
+        ],
+        "editable": [
+          "title",
+          "videoSrc",
+          "videoWidth",
+          "videoHeight",
+          "icon",
+          "duration"
+        ],
+        "icons": [
+          "cursor",
+          "hand",
+          "keyboard",
+          "magnifier",
+          "gear",
+          "play"
+        ]
       },
       "preview": "previews/screen-recording-transition-frameless-v1.mp4",
       "styleframe": "previews/screen-recording-frameless-styleframe-v1.png",
@@ -152,7 +396,122 @@
       "rules": "DESIGN_RULES.md",
       "templateRules": "template-rules/screen-recording-transition/TEMPLATE.md",
       "layout": "template-rules/screen-recording-transition/layout.json",
-      "status": "validated"
+      "status": "validated",
+      "family": "screen-recording",
+      "layoutPattern": "frameless-screen",
+      "semanticTypes": [
+        "real-operation",
+        "product-proof",
+        "screen-demonstration"
+      ],
+      "avoidFor": [
+        "abstract-concept-without-screen"
+      ]
+    },
+    {
+      "id": "timeline-events",
+      "name": "剪贴画时间线",
+      "family": "timeline",
+      "layoutPattern": "collage-above-straight-axis",
+      "semanticTypes": [
+        "timeline",
+        "event-progression",
+        "milestones"
+      ],
+      "avoidFor": [
+        "ordered-process-without-time",
+        "hierarchy",
+        "cycle"
+      ],
+      "composition": "TimelineEvents",
+      "supports": {
+        "itemCount": [
+          3,
+          4,
+          5
+        ],
+        "editable": [
+          "events[].time",
+          "events[].title",
+          "events[].illustration",
+          "events[].imageSrc",
+          "events[].atSeconds",
+          "duration"
+        ]
+      },
+      "preset": "presets/timeline-events-candidate-04.json",
+      "styleframe": "previews/timeline-collage-source-v2.png",
+      "rules": "DESIGN_RULES.md",
+      "templateRules": "template-rules/timeline-events/TEMPLATE.md",
+      "layout": "template-rules/timeline-events/layout.json",
+      "status": "validated",
+      "preview": "previews/timeline-collage-dynamic-v2.mp4",
+      "approvedDesign": "previews/timeline-collage-approved-styleframe.png",
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed"
+      }
+    },
+    {
+      "id": "order-hierarchy",
+      "name": "三方委托层级",
+      "family": "hierarchy",
+      "layoutPattern": "staggered-three-level-collage",
+      "semanticTypes": [
+        "three-level-hierarchy",
+        "commission-chain",
+        "outsourcing-relationship"
+      ],
+      "avoidFor": [
+        "ordered-process",
+        "timeline",
+        "cycle",
+        "more-than-three-levels"
+      ],
+      "status": "validated",
+      "composition": "OrderHierarchy",
+      "preset": "presets/order-hierarchy-default.json",
+      "preview": "previews/order-hierarchy-dynamic-v1.mp4",
+      "rules": "template-rules/order-hierarchy/TEMPLATE.md",
+      "layout": "template-rules/order-hierarchy/layout.json",
+      "supports": {
+        "itemCount": [3],
+        "editable": [
+          "levels[].title",
+          "levels[].note",
+          "levels[].imageSrc",
+          "connectionLabels[]",
+          "levelAtSeconds[]",
+          "connectionAtSeconds[]",
+          "duration"
+        ],
+        "validatedVariants": ["chinese-production-chain"],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed"
+      }
     }
-  ]
+  ],
+  "schemaVersion": 2,
+  "selectionPolicy": {
+    "maxUsesPerFamily": 3,
+    "maxUsesPerLayout": 2,
+    "allowAdjacentSameFamily": false,
+    "fallbackOrder": [
+      "validated-template",
+      "brand-component-composition",
+      "custom-illustration"
+    ]
+  },
+  "componentLibrary": {
+    "path": "src/components",
+    "stylePath": "src/styles/brand.ts",
+    "components": [
+      "BrandBackground",
+      "SpriteCrop",
+      "motion"
+    ]
+  }
 }

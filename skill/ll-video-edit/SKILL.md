@@ -45,9 +45,20 @@ powershell -ExecutionPolicy Bypass -File scripts/init_project.ps1 -ProjectPath "
 
 ## 动效素材库
 
-进入第四步、需要选择现成模板时，阅读 [references/motion-library.md](references/motion-library.md)。只调用 `library.json` 中状态为 `validated` 的模板；预览视频只用于挑选，不能作为固定素材剪入成片。
+第二步规划分镜时就阅读 [references/motion-library.md](references/motion-library.md) 和 [references/storyboard-usage.md](references/storyboard-usage.md)，预选动效并逐镜计数、附全片汇总。次数检查未完成或未通过，不进入制作。第四步更换模板后重新统计。只调用 `library.json` 中状态为 `validated` 的模板；预览视频只用于挑选，不能作为固定素材剪入成片。
 
-如果没有找到素材库，可以先完成前三步；进入第四步前必须明确指出缺失，并请用户提供素材库路径。不得假装已经调用模板。
+如果没有找到素材库，可以完成第一步并整理分镜和素材需求草案，但动效选择与计数须标记待完成；请用户提供素材库路径，补齐统计后再正式确认分镜。不得假装已经调用模板或统计通过。
+
+### 快速制作与模板晋级
+
+默认目标是尽快完成当前视频，不是边剪视频边扩建素材库。遇到现有模板无法覆盖的镜头时，按以下顺序处理：
+
+1. 语义匹配的 validated 模板：直接调用并按分镜计数。
+2. 现有背景、纸张、人物、钱币、字体或基础组件能够组合：在当前视频工程中制作单次画面，标记为“非素材库画面”。
+3. 只缺一张插画或装饰素材：只补该素材并用于当前镜头，不先开发模板。
+4. 只有用户明确要求扩充素材库，或同一结构已经在不同项目中重复出现并证明值得复用时，才进入模板开发、参数化、边界测试和 library.json 登记。
+
+单次画面仍须经过静态确认、动态确认和成片检查，但不要求创建 TEMPLATE.md、layout.json、通用预设或最大数量测试。不得为了降低计数把真实的完整模板伪装成单次组合；也不得因为写了一个 Remotion 组件就自动把它升级为素材库模板。
 
 ## 导出与验收
 

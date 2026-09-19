@@ -15,6 +15,10 @@
 
 ## 已完成模板
 
+- 双向趋势：质量与价格变体已确认，仅作定性趋势示意；规则见 `template-rules/opposing-trends/TEMPLATE.md`。
+- 投入累积／资源消耗：稿件增加与钱币减少，文字和插画分层，支持替换素材。规则见 `template-rules/cost-accumulation/TEMPLATE.md`。
+- 剪贴画时间线：支持3～5个时间节点，无标题，插画在轴上、日期与说明在轴下。规则见 `template-rules/timeline-events/TEMPLATE.md`。
+- 三方委托层级：固定表达上游决策方、中间承接方和实际制作方的三层关系。规则见 `template-rules/order-hierarchy/TEMPLATE.md`。
 - 多点列举：2～6点，规则见 `template-rules/multi-point-list/TEMPLATE.md`。
 - 流程步骤：2～6步，支持折线和弯曲路线，规则见 `template-rules/process-flow/TEMPLATE.md`。
 - 前后对比：左右对照，规则见 `template-rules/before-after-compare/TEMPLATE.md`。
@@ -46,3 +50,5 @@ npm.cmd run studio
 ```powershell
 npm.cmd run render:multi-03-torn
 ```
+
+新增 `src/components` 公共组件与 `src/styles/brand.ts` 品牌样式。模板选择按 `family` 合并统计变体，先判断内容关系，再选择构图。

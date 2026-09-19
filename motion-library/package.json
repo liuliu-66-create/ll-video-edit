@@ -17,7 +17,9 @@
     "render:concept-topdown-github": "remotion render src/index.ts ConceptExplainerTopDownGithub previews/concept-explainer-topdown-github-v1.mp4 --codec=h264 --crf=16",
     "render:key-conclusion": "remotion render src/index.ts KeyConclusion previews/key-conclusion-v1.mp4 --props=presets/key-conclusion.json --codec=h264 --crf=16",
     "render:key-conclusion-editorial-collage": "remotion render src/index.ts KeyConclusionEditorialCollage previews/key-conclusion-editorial-collage-v2.mp4 --props=presets/key-conclusion-editorial-collage.json --codec=h264 --crf=16",
-    "render:screen-recording-frameless": "remotion render src/index.ts ScreenRecordingTransition previews/screen-recording-transition-frameless-v1.mp4 --props=presets/screen-recording-frameless-styleframe.json --codec=h264 --crf=16"
+    "render:screen-recording-frameless": "remotion render src/index.ts ScreenRecordingTransition previews/screen-recording-transition-frameless-v1.mp4 --props=presets/screen-recording-frameless-styleframe.json --codec=h264 --crf=16",
+    "still:timeline": "remotion still src/index.ts TimelineEvents previews/timeline-collage-source-v2.png --frame=150",
+    "render:timeline": "remotion render src/index.ts TimelineEvents previews/timeline-collage-dynamic-v2.mp4 --codec=h264 --crf=18"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",
