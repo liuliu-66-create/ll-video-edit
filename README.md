@@ -56,29 +56,17 @@
 - 不提供真实录屏，却希望生成虚假的软件操作界面；
 - 希望完全不确认，一次性生成无法检查的全片。
 
-## 最简单的安装方法
+## 一条提示词完成安装
 
-推荐让 Codex 读取本项目并完成安装。把下面这段话复制给 Codex：
-
-```text
-请阅读这个项目的 README，帮我安装 ll-video-edit Skill，并检查是否安装成功。
-
-现在只做安装和检查，不要开始制作视频。如果中间需要我操作，请一次只告诉我一个步骤。
-```
-
-项目地址：
+把下面这段话直接复制给 Codex：
 
 ```text
-https://github.com/liuliu-66-create/ll-video-edit
+请帮我安装这个 Codex Skill：https://github.com/liuliu-66-create/ll-video-edit
+
+请按照仓库 README 完成 Skill、动效素材库和运行环境的安装与检查，直到 readyForRendering 为 true。现在只安装和检查，不要开始制作视频；如果需要我操作，请一次只告诉我一个步骤。
 ```
 
-安装过程需要完成三件事：
-
-1. 安装 `skill/ll-video-edit`；
-2. 安装仓库内 `motion-library` 的 Remotion 依赖；
-3. 让环境变量 `LL_VIDEO_MOTION_LIBRARY` 指向本地的 `motion-library` 文件夹。
-
-安装完成后需要重启 Codex。重启后，Codex 会运行环境检查；只有检查结果中的 `readyForRendering` 为 `true`，才表示已经具备正式渲染条件。
+之后按照 Codex 的提示操作即可。安装过程中需要重启 Codex 时，它会告诉你。
 
 ## 开始第一条视频
 
@@ -174,9 +162,10 @@ Codex 只补齐尚未完成的镜头，生成完整初版，根据反馈修改�
 
 这样可以在成本较低的阶段发现问题，避免整条视频生成以后才推翻重做。
 
-## 手动安装
+<details>
+<summary>手动安装说明（高级用户）</summary>
 
-如果你熟悉本地环境，也可以手动安装。
+如果你熟悉本地环境，也可以展开这里手动安装。
 
 ### 1. 下载仓库
 
@@ -221,6 +210,8 @@ powershell -ExecutionPolicy Bypass -File skill/ll-video-edit/scripts/check_envir
 ```
 
 确认输出中的 `readyForRendering` 为 `true`。
+
+</details>
 
 ## 项目结构
 
