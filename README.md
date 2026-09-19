@@ -1,38 +1,206 @@
 # ll-video-edit
 
-`ll-video-edit` 是一个面向教程型视频的 Codex 自动剪辑 Skill。它按照固定六步流程，引导用户从定稿逐字稿和配音开始，完成音频对齐、分镜、真实素材准备、静态视觉确认、动态样片确认和完整视频交付。
+把定稿逐字稿、配音和真实录屏交给 Codex，按照固定六步流程完成分镜、字幕、动效、合成和最终 MP4。
 
-> 当前版本：`v0.1.0` 技术预览版。已经包含 Skill、六步 SOP 和 16:9 Remotion 动效素材库，但还不是面向完全小白的一键安装版本。
+`ll-video-edit` 不是一个点一下就自动生成全片的软件，而是一个会在关键步骤让你查看、确认和修改的 Codex 自动剪辑 Skill。你不需要会写 Remotion 代码，Codex 会负责执行；你负责提供真实内容和做关键判断。
 
-## 适合谁
+<p align="center">
+  <img src="./motion-library/previews/multi-point-generic-styleframe-v1.png" width="100%" alt="ll-video-edit 教程型视频动效示例">
+</p>
 
-- 会使用 Codex，并能从 GitHub 下载项目；
-- 已经有定稿逐字稿；
-- 不熟悉如何用 Codex 与 Remotion 完成自动剪辑。
+## 先看效果
 
-它不负责写稿、改稿、剪口误，也不会跳过确认直接生成全片。
+下面是当前素材库中已经确认的动效样片。点击图片即可播放，不需要先下载项目。
 
-## 使用前准备
+<p align="center">
+  <a href="./motion-library/previews/timeline-collage-dynamic-v2.mp4">
+    <img src="./motion-library/previews/timeline-collage-approved-styleframe.png" width="49%" alt="时间线动效样片">
+  </a>
+  <a href="./motion-library/previews/order-hierarchy-dynamic-v1.mp4">
+    <img src="./motion-library/previews/order-hierarchy-default-final.png" width="49%" alt="层级关系动效样片">
+  </a>
+</p>
 
-- Codex；
-- Node.js 与 npm；
-- FFmpeg 与 ffprobe；
-- 可用的火山引擎豆包语音服务；
-- 仓库已经附带的 `motion-library` 动效素材库。
+还可以查看：
 
-真实软件操作画面在分镜确认后按清单录制，不需要提前准备人物口播视频。
+- [投入累积／资源消耗动效](./motion-library/previews/cost-accumulation-dynamic-v2.mp4)
+- [双向趋势动效](./motion-library/previews/opposing-trends-dynamic-v1.mp4)
+- [前后对比动效](./motion-library/previews/before-after-compare-v1.mp4)
+- [真实录屏展示动效](./motion-library/previews/screen-recording-transition-frameless-v1.mp4)
 
-## 安装
+以上视频用于展示素材库中的视觉结构。正式成片不会直接剪入这些预览视频，而是调用模板源码，替换成你当前视频的文字、图片和真实录屏。
 
-1. 下载或克隆本仓库，并保留完整目录，不要只复制 `skill` 文件夹。
-2. 将 `skill/ll-video-edit` 文件夹安装到 Codex Skills 目录。
-3. 进入 `motion-library` 安装 Remotion 依赖：
+## 你需要提供什么
+
+| 你提供 | Codex 负责 | 最终得到 |
+| --- | --- | --- |
+| 选择 `16:9` 横屏或 `9:16` 竖屏 | 建立项目并检查制作环境 | 可继续制作的视频项目 |
+| 已经定稿的完整逐字稿 | 生成或接收完整配音，并对齐逐字稿 | 完整配音与时间轴 |
+| 按素材清单录制的真实软件画面 | 制作分镜、字幕、动效和合成 | 完整 MP4 |
+| 对静态图、动态样片和初版的确认 | 技术检查与实际画面检查 | Remotion 工程、素材和验收结果 |
+
+不需要提前准备人物口播视频。真实的软件操作画面会在分镜确认后，由 Codex 列出具体录屏清单，你再按照清单录制。
+
+## 它适合谁
+
+- 已经有定稿逐字稿，想把它制作成教程型视频；
+- 会使用 Codex，但不会 Remotion 或不想自己写剪辑代码；
+- 希望 Codex 帮忙判断每段内容应该使用真实录屏、动效模板还是单次组合画面；
+- 希望先看分镜和样片，再生成完整视频；
+- 希望最后仍然保留可修改的 Remotion 工程。
+
+它不适合：
+
+- 还没有定稿逐字稿，希望 Skill 先帮忙写稿或改稿；
+- 主要需求是剪人物口误或删除口播停顿；
+- 不提供真实录屏，却希望生成虚假的软件操作界面；
+- 希望完全不确认，一次性生成无法检查的全片。
+
+## 最简单的安装方法
+
+推荐让 Codex 读取本项目并完成安装。把下面这段话复制给 Codex：
+
+```text
+请阅读这个项目的 README，帮我安装 ll-video-edit Skill，并检查是否安装成功。
+
+现在只做安装和检查，不要开始制作视频。如果中间需要我操作，请一次只告诉我一个步骤。
+```
+
+项目地址：
+
+```text
+https://github.com/liuliu-66-create/ll-video-edit
+```
+
+安装过程需要完成三件事：
+
+1. 安装 `skill/ll-video-edit`；
+2. 安装仓库内 `motion-library` 的 Remotion 依赖；
+3. 让环境变量 `LL_VIDEO_MOTION_LIBRARY` 指向本地的 `motion-library` 文件夹。
+
+安装完成后需要重启 Codex。重启后，Codex 会运行环境检查；只有检查结果中的 `readyForRendering` 为 `true`，才表示已经具备正式渲染条件。
+
+## 开始第一条视频
+
+安装完成后，在 Codex 中输入：
+
+```text
+使用 $ll-video-edit 带我制作第一条自动剪辑视频。
+
+请严格按照六步流程进行，每完成一步先让我查看和确认，再进入下一步。
+```
+
+Skill 启动后的第一句话只会询问：
+
+> 这条视频请选择一种画幅：16:9 横屏，还是 9:16 竖屏？
+
+你确认画幅以后，它才会让你提交已经定稿的逐字稿，不会一开始要求你回答一大堆技术问题。
+
+## 六步会分别得到什么
+
+### 第一步：确认画幅、逐字稿和完整配音
+
+你选择横屏或竖屏，提交定稿逐字稿。Codex 生成或接收一条完整配音，并检查逐字稿和配音是否对应。
+
+**你会看到：** 完整配音和基础项目信息。
+
+### 第二步：对齐声音并制作分镜
+
+Codex 根据配音时间，把逐字稿拆成镜头，判断每一段应该使用真实录屏、素材库动效还是单次组合画面。
+
+**你会看到：** 带时间、画面类型、素材需求、模板名称和模板使用次数的分镜表。
+
+### 第三步：准备真实素材
+
+Codex 会根据已经确认的分镜，列出需要录制的软件步骤、画面范围和注意事项。你只需要按照清单录制，不需要自己猜应该录什么。
+
+**你会看到：** 录屏和截图清单，以及素材是否齐全的检查结果。
+
+### 第四步：确认静态视觉
+
+Codex 先制作关键镜头的静态效果图。你可以检查人物、文字、构图、颜色和素材是否正确，确认后再做动画。
+
+**你会看到：** 关键镜头静态图。
+
+### 第五步：确认动态样片
+
+静态图确认后，Codex 制作带原配音的动态样片，检查文字出现顺序、动效节奏和录屏衔接。
+
+**你会看到：** 可以直接播放的带声音动态样片。
+
+### 第六步：完成全片并验收
+
+Codex 只补齐尚未完成的镜头，生成完整初版，根据反馈修改，并检查尺寸、声音、字幕、黑帧、文字遮挡和模板使用次数。
+
+**你会得到：**
+
+- 完整 MP4；
+- 可以继续修改的 Remotion 工程；
+- 本次使用的图片、录屏、配音和字幕；
+- 技术检查和实际画面验收结果。
+
+## 动效素材库
+
+仓库已经附带 Remotion 动效素材库，目前包括：
+
+- 多点列举；
+- 流程步骤；
+- 前后对比；
+- 概念解释；
+- 重点结论；
+- 真实录屏展示；
+- 剪贴画时间线；
+- 双向趋势；
+- 投入累积／资源消耗；
+- 三方委托层级。
+
+素材库不是一组固定 MP4。Codex 会读取 [`motion-library/library.json`](./motion-library/library.json)，调用已经确认的模板源码，再填入当前视频的文字、图片和录屏。
+
+如果现有模板不适合当前内容，默认优先使用现有背景、纸张、人物、字体和基础组件组合当前镜头，而不是每遇到一个新稿子就重新开发模板。只有可重复使用的结构，才值得升级为正式模板。
+
+模板的详细用途和当前状态见 [`motion-library/README.md`](./motion-library/README.md)。
+
+## 为什么必须逐步确认
+
+自动剪辑不只是把字幕贴到画面上。分镜判断、真实素材、视觉构图和动效节奏都可能出错。
+
+这个 Skill 把“生成”和“确认”分开：
+
+1. 先确认内容和声音；
+2. 再确认分镜和素材；
+3. 先看静态效果；
+4. 再看动态样片；
+5. 最后才生成完整视频。
+
+这样可以在成本较低的阶段发现问题，避免整条视频生成以后才推翻重做。
+
+## 手动安装
+
+如果你熟悉本地环境，也可以手动安装。
+
+### 1. 下载仓库
+
+克隆或下载整个仓库，并保留完整目录。不要只下载 `skill` 文件夹，因为正式制作还需要仓库中的 `motion-library`。
+
+### 2. 安装 Skill
+
+把 `skill/ll-video-edit` 安装到 Codex Skills 目录。Windows 默认通常位于：
+
+```text
+C:\Users\你的用户名\.codex\skills\ll-video-edit
+```
+
+### 3. 安装动效素材库依赖
+
+进入本仓库的 `motion-library` 目录，运行：
 
 ```powershell
 npm.cmd ci
 ```
 
-4. 把环境变量 `LL_VIDEO_MOTION_LIBRARY` 设置为本仓库内 `motion-library` 的绝对路径，然后重启 Codex。Windows PowerShell 示例：
+### 4. 设置素材库路径
+
+把环境变量 `LL_VIDEO_MOTION_LIBRARY` 设置为本仓库内 `motion-library` 的绝对路径：
 
 ```powershell
 [Environment]::SetEnvironmentVariable(
@@ -42,32 +210,32 @@ npm.cmd ci
 )
 ```
 
-5. 在第一次制作视频时，让 Codex 运行 `skill/ll-video-edit/scripts/check_environment.ps1`。检查结果中的 `readyForRendering` 为 `true` 后再开始渲染。
+设置完成后重启 Codex。
 
-## 开始第一条视频
+### 5. 检查环境
 
-在 Codex 中输入：
+让 Codex 运行：
 
-```text
-使用 $ll-video-edit 带我制作第一条自动剪辑视频。
+```powershell
+powershell -ExecutionPolicy Bypass -File skill/ll-video-edit/scripts/check_environment.ps1
 ```
 
-Skill 的第一句话只会询问选择 `16:9` 横屏还是 `9:16` 竖屏，然后一次推进一个步骤。
+确认输出中的 `readyForRendering` 为 `true`。
 
-## 六步结果
+## 项目结构
 
-1. 确定画幅、接收定稿逐字稿并生成最终配音；
-2. 对齐音频并完成分镜表；
-3. 按分镜准备真实素材包；
-4. 套用视觉模板并确认静态效果图；
-5. 制作带原配音的动态样片；
-6. 完成全片、修改并验收交付。
+```text
+ll-video-edit/
+├─ README.md                  给使用者看的安装与使用说明
+├─ skill/ll-video-edit/       Codex Skill、六步规则和检查脚本
+└─ motion-library/            Remotion 动效素材库、预设与预览样片
+```
 
-完成后交付完整 MP4、可继续编辑的 Remotion 工程、使用素材和验收结果。
+## 当前版本边界
 
-## 第一版边界
-
-- 当前素材库只完成了 `16:9` 横版验证；`9:16` 竖版需要重新排版和确认。
-- 当前版本由 Codex 按 SOP 逐步执行，不是点击一次即可生成全片的软件。
-- 使用者仍需安装 Codex、Node.js、npm、FFmpeg 与 ffprobe，并自行配置配音服务。
-- 预览视频只用于挑选模板；正式成片会调用模板源码并替换为当前视频的文字、图片或真实录屏。
+- 当前是公开测试版本，不是一键生成全片的桌面软件；
+- 当前动效素材库主要完成了 `16:9` 横版验证；
+- `9:16` 竖版需要逐镜重新排版和确认；
+- 真实的软件操作必须来自使用者提供的录屏或截图；
+- 配音服务、Node.js、FFmpeg、Python 等本地环境仍需要首次配置；
+- README 用于帮助人理解、安装和开始使用，详细执行规则以 [`skill/ll-video-edit/SKILL.md`](./skill/ll-video-edit/SKILL.md) 和 [`references`](./skill/ll-video-edit/references/) 为准。
