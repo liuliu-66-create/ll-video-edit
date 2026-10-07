@@ -475,7 +475,9 @@
       "rules": "template-rules/order-hierarchy/TEMPLATE.md",
       "layout": "template-rules/order-hierarchy/layout.json",
       "supports": {
-        "itemCount": [3],
+        "itemCount": [
+          3
+        ],
         "editable": [
           "levels[].title",
           "levels[].note",
@@ -485,12 +487,809 @@
           "connectionAtSeconds[]",
           "duration"
         ],
-        "validatedVariants": ["chinese-production-chain"],
+        "validatedVariants": [
+          "chinese-production-chain"
+        ],
         "candidateVariants": []
       },
       "review": {
         "staticDesign": "user-confirmed",
         "dynamic": "user-confirmed"
+      }
+    },
+    {
+      "id": "transfer-decay",
+      "name": "传递递减",
+      "family": "transfer-decay",
+      "layoutPattern": "descending-resource-chain",
+      "semanticTypes": [
+        "multi-level-resource-decay",
+        "value-erosion",
+        "quantity-loss-chain"
+      ],
+      "avoidFor": [
+        "ordered-process-without-loss",
+        "non-quantity-hierarchy",
+        "parallel-points"
+      ],
+      "status": "validated",
+      "composition": "TransferDecay",
+      "preset": "presets/transfer-decay-candidate.json",
+      "styleframe": "previews/transfer-decay-candidate-v2.png",
+      "preview": "previews/transfer-decay-dynamic-v1.mp4",
+      "rules": "template-rules/transfer-decay/TEMPLATE.md",
+      "layout": "template-rules/transfer-decay/layout.json",
+      "supports": {
+        "itemCount": [
+          3,
+          4,
+          5
+        ],
+        "editable": [
+          "title",
+          "subtitle",
+          "levels[].title",
+          "levels[].value",
+          "levels[].note",
+          "levels[].resourceCount",
+          "lossLabels[]"
+        ],
+        "validatedVariants": [
+          "banknote-loss-chain"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-09-29"
+      }
+    },
+    {
+      "id": "layered-pyramid",
+      "name": "层级金字塔",
+      "family": "layered-hierarchy",
+      "layoutPattern": "torn-paper-pyramid",
+      "semanticTypes": [
+        "layered-progression",
+        "foundation-to-outcome",
+        "structural-support"
+      ],
+      "avoidFor": [
+        "exact-quantity-change",
+        "ordered-process",
+        "circular-relationship"
+      ],
+      "status": "validated",
+      "composition": "LayeredPyramid",
+      "preset": "presets/layered-pyramid-candidate.json",
+      "styleframe": "previews/layered-pyramid-candidate-v2.png",
+      "preview": "previews/layered-pyramid-dynamic-v1.mp4",
+      "rules": "template-rules/layered-pyramid/TEMPLATE.md",
+      "layout": "template-rules/layered-pyramid/layout.json",
+      "supports": {
+        "itemCount": [
+          3,
+          4,
+          5
+        ],
+        "editable": [
+          "title",
+          "subtitle",
+          "levels[].title",
+          "levels[].note"
+        ],
+        "validatedVariants": [
+          "torn-paper-foundation-stack"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-09-29"
+      }
+    },
+    {
+      "id": "dual-choice",
+      "name": "双选择",
+      "family": "decision-choice",
+      "layoutPattern": "equal-weight-fork-with-torn-keywords",
+      "semanticTypes": [
+        "binary-choice",
+        "parallel-options",
+        "two-action-directions"
+      ],
+      "avoidFor": [
+        "before-after-change",
+        "ranked-recommendation",
+        "more-than-two-options",
+        "multi-point-list"
+      ],
+      "status": "validated",
+      "composition": "DualChoice",
+      "preset": "presets/dual-choice-candidate.json",
+      "styleframe": "previews/dual-choice-candidate-v4.png",
+      "preview": "previews/dual-choice-torn-v2.mp4",
+      "rules": "template-rules/dual-choice/TEMPLATE.md",
+      "layout": "template-rules/dual-choice/layout.json",
+      "supports": {
+        "itemCount": [
+          2
+        ],
+        "editable": [
+          "title",
+          "leftEyebrow",
+          "leftTitle",
+          "leftImageSrc",
+          "rightEyebrow",
+          "rightTitle",
+          "rightImageSrc",
+          "connector",
+          "footer",
+          "footerMarker",
+          "durationSeconds"
+        ],
+        "validatedVariants": [
+          "torn-keywords"
+        ],
+        "candidateVariants": []
+      },
+      "carrierPolicy": {
+        "plainText": [
+          "question",
+          "choiceDescription",
+          "footer"
+        ],
+        "tornPaper": [
+          "choiceKeyword"
+        ],
+        "maxTornPaperCount": 2
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-09-29"
+      }
+    },
+    {
+      "id": "imbalance-scale",
+      "name": "不对等天平",
+      "family": "imbalance-scale",
+      "layoutPattern": "asymmetric-torn-paper-balance",
+      "semanticTypes": [
+        "unequal-relationship",
+        "effort-return-imbalance",
+        "rights-responsibility-imbalance"
+      ],
+      "avoidFor": [
+        "ordinary-before-after",
+        "equal-parallel-options",
+        "single-value-change"
+      ],
+      "status": "validated",
+      "composition": "ImbalanceScale",
+      "preset": "presets/imbalance-scale-candidate.json",
+      "styleframe": "previews/imbalance-scale-candidate-v1.png",
+      "preview": "previews/imbalance-scale-dynamic-v1.mp4",
+      "rules": "template-rules/imbalance-scale/TEMPLATE.md",
+      "layout": "template-rules/imbalance-scale/layout.json",
+      "supports": {
+        "itemCount": [
+          2
+        ],
+        "editable": [
+          "headline",
+          "leftLabel",
+          "leftValue",
+          "rightLabel",
+          "rightValue",
+          "conclusion"
+        ],
+        "validatedVariants": [
+          "torn-paper-vintage-balance"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "big-number-card",
+      "name": "大数字卡",
+      "family": "data-emphasis",
+      "layoutPattern": "editorial-number-with-local-comparison",
+      "semanticTypes": [
+        "single-key-metric",
+        "percentage-or-multiple",
+        "before-after-data-summary"
+      ],
+      "avoidFor": [
+        "multiple-equal-metrics",
+        "full-chart",
+        "ordinary-quote"
+      ],
+      "status": "validated",
+      "composition": "BigNumberCard",
+      "preset": "presets/big-number-card-candidate.json",
+      "styleframe": "previews/big-number-card-candidate-v2.png",
+      "preview": "previews/big-number-card-dynamic-v1.mp4",
+      "rules": "template-rules/big-number-card/TEMPLATE.md",
+      "layout": "template-rules/big-number-card/layout.json",
+      "supports": {
+        "itemCount": [
+          1
+        ],
+        "editable": [
+          "headline",
+          "context",
+          "eyebrow",
+          "prefix",
+          "value",
+          "suffix",
+          "label",
+          "beforeLabel",
+          "beforeValue",
+          "afterLabel",
+          "afterValue",
+          "footnote"
+        ],
+        "validatedVariants": [
+          "editorial-big-number"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "stage-status-board",
+      "name": "阶段状态板",
+      "family": "stage-status",
+      "layoutPattern": "continuous-progress-ribbon",
+      "semanticTypes": [
+        "current-project-stage",
+        "done-active-pending-status",
+        "progress-checkpoint"
+      ],
+      "avoidFor": [
+        "ordinary-ordered-process",
+        "timeline",
+        "parallel-list"
+      ],
+      "status": "validated",
+      "composition": "StageStatusBoard",
+      "preset": "presets/stage-status-board-candidate.json",
+      "styleframe": "previews/stage-status-board-candidate-v3.png",
+      "preview": "previews/stage-status-board-dynamic-v1.mp4",
+      "rules": "template-rules/stage-status-board/TEMPLATE.md",
+      "layout": "template-rules/stage-status-board/layout.json",
+      "supports": {
+        "itemCount": [
+          4,
+          5
+        ],
+        "editable": [
+          "headline",
+          "stages[].title",
+          "stages[].note",
+          "stages[].status"
+        ],
+        "validatedVariants": [
+          "straight-progress-ribbon"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "input-convergence",
+      "name": "输入汇聚",
+      "family": "input-convergence",
+      "layoutPattern": "short-curved-paper-ribbons-to-output",
+      "semanticTypes": [
+        "multiple-inputs-one-output",
+        "materials-to-result",
+        "conditions-to-outcome"
+      ],
+      "avoidFor": [
+        "ordinary-parallel-list",
+        "ordered-process",
+        "quantity-decay"
+      ],
+      "status": "validated",
+      "composition": "InputConvergence",
+      "preset": "presets/input-convergence-candidate.json",
+      "styleframe": "previews/input-convergence-candidate-v1.png",
+      "preview": "previews/input-convergence-dynamic-v1.mp4",
+      "rules": "template-rules/input-convergence/TEMPLATE.md",
+      "layout": "template-rules/input-convergence/layout.json",
+      "supports": {
+        "itemCount": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "editable": [
+          "headline",
+          "inputs[].label",
+          "inputs[].mark",
+          "outputLabel"
+        ],
+        "validatedVariants": [
+          "short-paper-ribbon-convergence"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "audio-alignment-timeline",
+      "name": "音频对齐时间线",
+      "family": "timeline",
+      "layoutPattern": "waveform-to-visual-clips",
+      "semanticTypes": [
+        "audio-visual-alignment",
+        "voiceover-to-shot",
+        "subtitle-timing"
+      ],
+      "avoidFor": [
+        "ordinary-event-timeline",
+        "project-progress",
+        "more-than-four-clips"
+      ],
+      "status": "validated",
+      "composition": "AudioAlignmentTimeline",
+      "preset": "presets/audio-alignment-timeline-candidate.json",
+      "styleframe": "previews/audio-alignment-timeline-candidate-v1.png",
+      "preview": "previews/audio-alignment-timeline-dynamic-v1.mp4",
+      "rules": "template-rules/audio-alignment-timeline/TEMPLATE.md",
+      "layout": "template-rules/audio-alignment-timeline/layout.json",
+      "supports": {
+        "itemCount": [
+          3,
+          4
+        ],
+        "editable": [
+          "headline",
+          "emphasis",
+          "clips[].time",
+          "clips[].line",
+          "clips[].shot"
+        ],
+        "validatedVariants": [
+          "three-clip-alignment",
+          "four-clip-alignment"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-10-01"
+      }
+    },
+    {
+      "id": "dynamic-data-chart",
+      "name": "动态数据图表",
+      "family": "data-chart",
+      "layoutPattern": "four-chart-variants",
+      "semanticTypes": [
+        "category-value-comparison",
+        "time-series-trend",
+        "qualitative-direction",
+        "stage-growth"
+      ],
+      "avoidFor": [
+        "invented-data",
+        "invented-time-axis",
+        "ordinary-process"
+      ],
+      "status": "validated",
+      "composition": "DynamicDataChart",
+      "preset": "presets/data-chart-category-bars.json",
+      "styleframe": "previews/data-chart-category-bars-v1.png",
+      "preview": "previews/data-chart-category-bars-v1.mp4",
+      "variantPreviews": [
+        {
+          "id": "category-bars",
+          "semanticCategory": "重点与数据",
+          "preset": "presets/data-chart-category-bars.json",
+          "styleframe": "previews/data-chart-category-bars-v1.png",
+          "preview": "previews/data-chart-category-bars-v1.mp4",
+          "status": "validated"
+        },
+        {
+          "id": "time-line",
+          "semanticCategory": "对比与变化",
+          "preset": "presets/data-chart-time-line.json",
+          "styleframe": "previews/data-chart-time-line-v1.png",
+          "preview": "previews/data-chart-time-line-v1.mp4",
+          "status": "validated"
+        },
+        {
+          "id": "qualitative-rise",
+          "semanticCategory": "对比与变化",
+          "preset": "presets/data-chart-qualitative-rise.json",
+          "styleframe": "previews/data-chart-qualitative-rise-v1.png",
+          "preview": "previews/data-chart-qualitative-rise-v1.mp4",
+          "status": "validated"
+        },
+        {
+          "id": "step-growth",
+          "semanticCategory": "对比与变化",
+          "preset": "presets/data-chart-step-growth.json",
+          "styleframe": "previews/data-chart-step-growth-v1.png",
+          "preview": "previews/data-chart-step-growth-v1.mp4",
+          "status": "validated"
+        }
+      ],
+      "rules": "template-rules/dynamic-data-chart/TEMPLATE.md",
+      "layout": "template-rules/dynamic-data-chart/layout.json",
+      "supports": {
+        "itemCount": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "editable": [
+          "variant",
+          "headline",
+          "eyebrow",
+          "unit",
+          "items[].label",
+          "items[].value",
+          "items[].displayValue",
+          "conclusion"
+        ],
+        "validatedVariants": [
+          "category-bars",
+          "time-line",
+          "qualitative-rise",
+          "step-growth"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "material-photo-desk",
+      "name": "素材桌面",
+      "family": "real-material-evidence",
+      "layoutPattern": "asymmetric-material-desk-collage",
+      "semanticTypes": [
+        "material-preparation",
+        "real-assets-overview",
+        "production-evidence"
+      ],
+      "avoidFor": [
+        "single-screen-demonstration",
+        "ordered-process",
+        "timeline",
+        "exact-data-comparison"
+      ],
+      "status": "validated",
+      "composition": "MaterialPhotoDesk",
+      "preset": "presets/material-photo-desk-candidate.json",
+      "styleframe": "previews/material-photo-desk-candidate-v1.png",
+      "preview": "previews/material-photo-desk-dynamic-v1.mp4",
+      "rules": "template-rules/material-photo-desk/TEMPLATE.md",
+      "layout": "template-rules/material-photo-desk/layout.json",
+      "supports": {
+        "itemCount": [
+          4
+        ],
+        "editable": [
+          "headline",
+          "status",
+          "screenRecordingSrc",
+          "screenRecordingLabel",
+          "screenshotSrc",
+          "screenshotLabel",
+          "brandVisualSrc",
+          "brandVisualLabel",
+          "audioLabel",
+          "audioFile",
+          "stampTop",
+          "stampBottom"
+        ],
+        "validatedVariants": [
+          "four-material-desk-collage"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-10-06"
+      }
+    },
+    {
+      "id": "typical-shot-filmstrip",
+      "name": "典型镜头胶片条",
+      "family": "real-material-evidence",
+      "layoutPattern": "three-frame-torn-filmstrip",
+      "semanticTypes": [
+        "representative-shots",
+        "shot-type-overview",
+        "visual-narrative-combination"
+      ],
+      "avoidFor": [
+        "single-screen-demonstration",
+        "ordered-process",
+        "timeline",
+        "more-than-three-shots"
+      ],
+      "status": "validated",
+      "composition": "TypicalShotFilmstrip",
+      "preset": "presets/typical-shot-filmstrip-candidate.json",
+      "styleframe": "previews/typical-shot-filmstrip-candidate-v2.png",
+      "preview": "previews/typical-shot-filmstrip-dynamic-v1.mp4",
+      "rules": "template-rules/typical-shot-filmstrip/TEMPLATE.md",
+      "layout": "template-rules/typical-shot-filmstrip/layout.json",
+      "supports": {
+        "itemCount": [
+          3
+        ],
+        "editable": [
+          "headline",
+          "eyebrow",
+          "note",
+          "shots[].label",
+          "shots[].imageSrc",
+          "shots[].objectPosition"
+        ],
+        "validatedVariants": [
+          "three-frame-torn-filmstrip"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-10-06"
+      }
+    },
+    {
+      "id": "storyboard-work-order",
+      "name": "分镜工作单",
+      "family": "production-work-order",
+      "layoutPattern": "single-shot-image-and-fields",
+      "semanticTypes": [
+        "shot-planning",
+        "storyboard-handoff",
+        "audio-to-visual-execution"
+      ],
+      "avoidFor": [
+        "parallel-points",
+        "project-status",
+        "timeline-events",
+        "multiple-full-shot-records"
+      ],
+      "status": "validated",
+      "composition": "StoryboardWorkOrder",
+      "preset": "presets/storyboard-work-order-candidate.json",
+      "styleframe": "previews/storyboard-work-order-candidate-v2.png",
+      "preview": "previews/storyboard-work-order-dynamic-v2.mp4",
+      "rules": "template-rules/storyboard-work-order/TEMPLATE.md",
+      "layout": "template-rules/storyboard-work-order/layout.json",
+      "supports": {
+        "itemCount": [
+          1
+        ],
+        "materialCount": [
+          2,
+          3,
+          4
+        ],
+        "editable": [
+          "headline",
+          "shotNumber",
+          "timecode",
+          "imageSrc",
+          "subtitle",
+          "visual",
+          "materials[]"
+        ],
+        "validatedVariants": [
+          "single-shot-work-order"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-10-06"
+      }
+    },
+    {
+      "id": "final-quality-stamp-board",
+      "name": "检查结果列点",
+      "family": "status-checklist",
+      "layoutPattern": "five-torn-check-strips-with-final-stamp",
+      "semanticTypes": [
+        "pre-delivery-check",
+        "acceptance-results",
+        "completed-status-list"
+      ],
+      "avoidFor": [
+        "ordinary-parallel-points",
+        "unfinished-tasks",
+        "timeline",
+        "mixed-pass-fail-status"
+      ],
+      "status": "validated",
+      "composition": "FinalQualityStampBoard",
+      "preset": "presets/final-quality-stamp-board-candidate.json",
+      "styleframe": "previews/final-quality-stamp-board-candidate-v3.png",
+      "preview": "previews/final-quality-stamp-board-dynamic-v1.mp4",
+      "rules": "template-rules/final-quality-stamp-board/TEMPLATE.md",
+      "layout": "template-rules/final-quality-stamp-board/layout.json",
+      "supports": {
+        "itemCount": [
+          5
+        ],
+        "status": [
+          "passed"
+        ],
+        "editable": [
+          "headline",
+          "items[].label",
+          "items[].value",
+          "conclusion"
+        ],
+        "validatedVariants": [
+          "five-passed-check-results"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-10-06"
+      }
+    },
+    {
+      "id": "action-prerequisite-card",
+      "name": "行动前提强调卡",
+      "family": "decision-prompt",
+      "layoutPattern": "single-question-mark-and-decision-prompt",
+      "semanticTypes": [
+        "action-prerequisite",
+        "decision-question",
+        "risk-reminder",
+        "viewpoint-pivot"
+      ],
+      "avoidFor": [
+        "parallel-points",
+        "final-conclusion",
+        "ordered-process",
+        "multiple-questions"
+      ],
+      "status": "validated",
+      "composition": "ActionPrerequisiteCard",
+      "preset": "presets/action-prerequisite-card-candidate.json",
+      "styleframe": "previews/action-prerequisite-card-candidate-v2.png",
+      "preview": "previews/action-prerequisite-card-dynamic-v1.mp4",
+      "rules": "template-rules/action-prerequisite-card/TEMPLATE.md",
+      "layout": "template-rules/action-prerequisite-card/layout.json",
+      "supports": {
+        "questionCount": [
+          1
+        ],
+        "editable": [
+          "headline",
+          "timingLabel",
+          "prompt",
+          "question"
+        ],
+        "validatedVariants": [
+          "single-action-prerequisite-question"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-10-06"
+      }
+    },
+    {
+      "id": "chapter-transition-dark-banner",
+      "name": "章节过渡／黑报纸撕纸标题",
+      "family": "chapter-transition",
+      "layoutPattern": "dark-newspaper-number-and-horizontal-torn-title",
+      "semanticTypes": [
+        "chapter-transition",
+        "section-title",
+        "video-structure-transition"
+      ],
+      "avoidFor": [
+        "body-copy",
+        "ordered-process",
+        "top-progress-bar",
+        "full-video-edit"
+      ],
+      "status": "validated",
+      "composition": "ChapterTransitionDarkBanner",
+      "preset": "presets/chapter-transition-dark-banner.json",
+      "styleframe": "previews/chapter-transition-dark-banner-styleframe-v1.png",
+      "preview": "previews/chapter-transition-dark-banner-dynamic-v1.mp4",
+      "rules": "template-rules/chapter-transition/TEMPLATE.md",
+      "layout": "template-rules/chapter-transition/dark-banner-layout.json",
+      "supports": {
+        "editable": [
+          "sectionNumber",
+          "title"
+        ],
+        "validatedVariants": [
+          "dark-newspaper-torn-banner"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-10-07"
+      }
+    },
+    {
+      "id": "chapter-transition-split-newspaper",
+      "name": "章节过渡／黑白拼接旧报纸",
+      "family": "chapter-transition",
+      "layoutPattern": "split-newspaper-number-slide-and-title-reveal",
+      "semanticTypes": [
+        "chapter-transition",
+        "section-title",
+        "video-structure-transition"
+      ],
+      "avoidFor": [
+        "body-copy",
+        "ordered-process",
+        "top-progress-bar",
+        "full-video-edit"
+      ],
+      "status": "validated",
+      "composition": "ChapterTransitionSplitNewspaper",
+      "preset": "presets/chapter-transition-split-newspaper.json",
+      "styleframe": "previews/chapter-transition-split-newspaper-styleframe-v1.png",
+      "preview": "previews/chapter-transition-split-newspaper-dynamic-v1.mp4",
+      "rules": "template-rules/chapter-transition/TEMPLATE.md",
+      "layout": "template-rules/chapter-transition/split-newspaper-layout.json",
+      "supports": {
+        "editable": [
+          "sectionNumber",
+          "title"
+        ],
+        "validatedVariants": [
+          "split-newspaper-direct-reveal"
+        ],
+        "candidateVariants": []
+      },
+      "review": {
+        "staticDesign": "user-confirmed",
+        "dynamic": "user-confirmed",
+        "confirmedAt": "2026-10-07"
       }
     }
   ],

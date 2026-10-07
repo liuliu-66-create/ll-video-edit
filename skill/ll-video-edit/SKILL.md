@@ -11,11 +11,11 @@ description: 使用 Codex、Remotion 和真实素材，按照固定六步流程�
 
 开始新项目时，先完整阅读 [references/six-step-workflow.md](references/six-step-workflow.md)，再执行任何操作。
 
-第一条回复只能问：
+第一条回复只能说明固定画幅并请求定稿逐字稿：
 
-> 这条视频请选择一种画幅：16:9 横屏，还是 9:16 竖屏？
+> 本 Skill 固定制作 16:9 横屏视频。请粘贴已经定稿的完整逐字稿，或提供文件路径。
 
-不要先检查环境，不要先问平台、选题、目标时长、风格或素材。用户确认画幅后，只请求已经定稿的逐字稿；不写稿、不改稿。
+不要先检查环境，不要再询问画幅、平台、选题、目标时长、风格或素材；不写稿、不改稿。
 
 恢复已有项目时，先读取项目中的 `project-status.json` 和已有交付物，确定最后一个“用户已确认”的步骤。不要把“已经生成”或“技术检查通过”当成“用户已确认”。
 
@@ -38,7 +38,7 @@ description: 使用 Codex、Remotion 和真实素材，按照固定六步流程�
 需要新建项目目录时运行：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts/init_project.ps1 -ProjectPath "<项目绝对路径>" -AspectRatio "16:9"
+powershell -ExecutionPolicy Bypass -File scripts/init_project.ps1 -ProjectPath "<项目绝对路径>"
 ```
 
 不得覆盖已有 `project-status.json`。每完成一个确认节点，更新状态文件中的当前步骤、交付物路径和确认状态。

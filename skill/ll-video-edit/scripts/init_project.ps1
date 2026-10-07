@@ -1,10 +1,6 @@
 param(
     [Parameter(Mandatory = $true)]
-    [string]$ProjectPath,
-
-    [Parameter(Mandatory = $true)]
-    [ValidateSet("16:9", "9:16")]
-    [string]$AspectRatio
+    [string]$ProjectPath
 )
 
 $ErrorActionPreference = "Stop"
@@ -39,7 +35,7 @@ $statusAlreadyExisted = Test-Path -LiteralPath $statusPath
 if (-not $statusAlreadyExisted) {
     $status = [ordered]@{
         schemaVersion = 1
-        aspectRatio = $AspectRatio
+        aspectRatio = "16:9"
         currentStep = 1
         state = "in_progress"
         confirmed = [ordered]@{
@@ -61,4 +57,3 @@ if (-not $statusAlreadyExisted) {
     createdDirectories = $directories
     statusCreated = (-not $statusAlreadyExisted)
 } | ConvertTo-Json -Depth 4
-
