@@ -145,6 +145,8 @@ Codex 只补齐尚未完成的镜头，生成完整初版，根据反馈修改�
 
 素材库不是一组固定 MP4。Codex 会读取 [`motion-library/library.json`](./motion-library/library.json)，调用已经确认的模板源码，再填入当前视频的文字、图片和录屏。
 
+想单独浏览样式时，可以打开 [`motion-library/playground/index.html`](./motion-library/playground/index.html)。Playground 展示 9 个语义分类、31 种已验证视觉样式及真实动态样片；它是可选查看页，不是六步剪辑流程中的必经确认步骤。
+
 如果现有模板不适合当前内容，默认优先使用现有背景、纸张、人物、字体和基础组件组合当前镜头，而不是每遇到一个新稿子就重新开发模板。只有可重复使用的结构，才值得升级为正式模板。
 
 模板的详细用途和当前状态见 [`motion-library/README.md`](./motion-library/README.md)。

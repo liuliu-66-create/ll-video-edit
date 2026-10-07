@@ -11,6 +11,7 @@
 - `src/templates`：真正生成画面的动效模板。
 - `presets`：只需修改文字的示例配置。
 - `previews`：供人选择模板的对外样片。
+- `playground`：可选的本地素材库展示页，包含真实动态样片和效果图缩略图。
 - `qa`：对齐辅助线和边界数量的内部检查结果。
 
 ## 已完成模板
@@ -55,6 +56,17 @@
 4. 完成标准数量与边界数量检查后，状态才能标记为 `validated`。
 
 ## 本地预览
+
+浏览完整 Playground：
+
+```powershell
+Set-Location playground
+py -m http.server 4173 --bind 127.0.0.1
+```
+
+然后打开 `http://127.0.0.1:4173/index.html`。Playground 仅供查看和比较，不替代 `library.json` 的模板登记状态，也不是制作视频时必须让用户逐项确认的步骤。
+
+预览 Remotion 工程：
 
 ```powershell
 npm.cmd run studio

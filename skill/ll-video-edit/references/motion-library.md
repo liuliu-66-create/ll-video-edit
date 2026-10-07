@@ -10,6 +10,12 @@
 
 素材库必须至少包含 `library.json`。找不到时明确说明缺少什么，并请用户提供路径；不要猜路径或假装已调用。
 
+## 可选 Playground
+
+素材库根目录下的 `playground/index.html` 是可选的样式展示页。只有用户明确提出浏览、比较或检查素材库样式时才打开；正常六步剪辑流程仍由 Codex 根据分镜语义直接选择模板，不要求用户把所有相关动效重新确认一遍。
+
+Playground 的样片只用于查看。模板是否可以正式调用，始终以同一素材库的 `library.json`、`TEMPLATE.md` 和 `layout.json` 为准。
+
 ## 选择模板
 
 只使用 `library.json` 中 `status` 为 `validated` 的模板，并在调用前读取该模板指向的 `TEMPLATE.md` 和 `layout.json`。
