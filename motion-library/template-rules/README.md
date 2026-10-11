@@ -11,6 +11,9 @@
 | 前后对比 | `before-after-compare/TEMPLATE.md` | `before-after-compare/layout.json` |
 | 概念解释 | `concept-explainer/TEMPLATE.md` | `concept-explainer/layout.json` |
 | 重点结论 | `key-conclusion/TEMPLATE.md` | `key-conclusion/layout.json` |
+| 不对等关系 | `imbalance-scale/TEMPLATE.md` | `imbalance-scale/layout.json` |
+| 动态数据图表 | `dynamic-data-chart/TEMPLATE.md` | `dynamic-data-chart/layout.json` |
+| 音频对齐时间线 | `audio-alignment-timeline/TEMPLATE.md` | `audio-alignment-timeline/layout.json` |
 
 ## 固定门槛
 

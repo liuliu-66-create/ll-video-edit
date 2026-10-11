@@ -1,0 +1,14 @@
+{
+  "sourceRepository": "https://github.com/liuliu-66-create/ll-video-motion.git",
+  "sourceCommit": "b22e50fee80e3993d5e81616cfe41efd58e041c9",
+  "importedAtUtc": "2026-10-11T09:30:45.256879+00:00",
+  "scope": [
+    "src/",
+    "public/",
+    "presets/",
+    "template-rules/",
+    "playground/",
+    "DESIGN_RULES.md",
+    "library.json"
+  ]
+}

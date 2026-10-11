@@ -21,6 +21,7 @@ import {TransferDecay} from './templates/TransferDecay';
 import {LayeredPyramid} from './templates/LayeredPyramid';
 import {BigNumberCard} from './templates/BigNumberCard';
 import {StageStatusBoard} from './templates/StageStatusBoard';
+import {StageStatusClimb} from './templates/StageStatusClimb';
 import {ImbalanceScale} from './templates/ImbalanceScale';
 import {InputConvergence} from './templates/InputConvergence';
 import {DynamicDataChart} from './templates/DynamicDataChart';
@@ -30,12 +31,33 @@ import {TypicalShotFilmstrip} from './templates/TypicalShotFilmstrip';
 import {StoryboardWorkOrder} from './templates/StoryboardWorkOrder';
 import {FinalQualityStampBoard} from './templates/FinalQualityStampBoard';
 import {ActionPrerequisiteCard} from './templates/ActionPrerequisiteCard';
-import {ChapterTransitionReferenceStill} from './candidates/ChapterTransitionReferenceStill';
-import {ChapterTransitionSplitReferenceMotion} from './candidates/ChapterTransitionSplitReferenceStill';
 import {multiPoint03} from './presets';
+import {ChapterTransitionCandidate} from './candidates/ChapterTransitionCandidate';
+import {ChapterTransitionReferenceStill} from './candidates/ChapterTransitionReferenceStill';
+import {
+  ChapterTransitionSplitReferenceMotion,
+  ChapterTransitionSplitReferenceStill,
+} from './candidates/ChapterTransitionSplitReferenceStill';
 
 export const Root: React.FC = () => (
   <>
+    <Composition
+      id="ChapterTransitionSplitReferenceStill"
+      component={ChapterTransitionSplitReferenceStill}
+      durationInFrames={1}
+      fps={30}
+      width={1920}
+      height={1080}
+    />
+    <Composition
+      id="ChapterTransitionSplitReferenceMotion"
+      component={ChapterTransitionSplitReferenceMotion}
+      durationInFrames={150}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{sectionNumber: '01', title: '工具使用教程'}}
+    />
     <Composition
       id="ChapterTransitionDarkBanner"
       component={ChapterTransitionReferenceStill}
@@ -53,6 +75,70 @@ export const Root: React.FC = () => (
       width={1920}
       height={1080}
       defaultProps={{sectionNumber: '01', title: '工具使用教程'}}
+    />
+    <Composition
+      id="ChapterTransitionReferenceStill"
+      component={ChapterTransitionReferenceStill}
+      durationInFrames={1}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{
+        sectionNumber: '01',
+        title: '工具使用教程',
+      }}
+    />
+    <Composition
+      id="ChapterTransitionReferenceMotion"
+      component={ChapterTransitionReferenceStill}
+      durationInFrames={150}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{
+        sectionNumber: '01',
+        title: '工具使用教程',
+        animated: true,
+      }}
+    />
+    <Composition
+      id="ChapterTransitionDark"
+      component={ChapterTransitionCandidate}
+      durationInFrames={150}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{
+        sectionNumber: '01',
+        title: '工具使用教程',
+        variant: 'dark',
+      }}
+    />
+    <Composition
+      id="ChapterTransitionLight"
+      component={ChapterTransitionCandidate}
+      durationInFrames={150}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{
+        sectionNumber: '01',
+        title: '工具使用教程',
+        variant: 'light',
+      }}
+    />
+    <Composition
+      id="ChapterTransitionSplit"
+      component={ChapterTransitionCandidate}
+      durationInFrames={150}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{
+        sectionNumber: '01',
+        title: '工具使用教程',
+        variant: 'split',
+      }}
     />
     <Composition
       id="ActionPrerequisiteCard"
@@ -216,6 +302,23 @@ export const Root: React.FC = () => (
         rightLabel: '实际回报',
         rightValue: '20%',
         conclusion: '付出和回报，根本不在一个量级',
+      }}
+    />
+    <Composition
+      id="StageStatusClimb"
+      component={StageStatusClimb}
+      durationInFrames={180}
+      fps={30}
+      width={1920}
+      height={1080}
+      defaultProps={{
+        headline: '这个视频，现在推进到哪一步了？',
+        stages: [
+          {title: '素材准备', status: 'done' as const},
+          {title: '画面生成', status: 'done' as const},
+          {title: '剪辑合成', status: 'active' as const},
+          {title: '发布检查', status: 'pending' as const},
+        ],
       }}
     />
     <Composition

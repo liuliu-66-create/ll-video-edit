@@ -145,6 +145,9 @@ Codex 只补齐尚未完成的镜头，生成完整初版，根据反馈修改�
 
 素材库不是一组固定 MP4。Codex 会读取 [`motion-library/library.json`](./motion-library/library.json)，调用已经确认的模板源码，再填入当前视频的文字、图片和录屏。
 
+两个仓库保持独立。更新本仓库的素材库时，在 `ll-video-motion` 仓库拉取并确认已发布提交后，从本仓库运行 `py scripts/sync_motion_library.py` 查看差异，再运行 `py scripts/sync_motion_library.py --apply` 复制已提交版本。脚本不读取 Video Motion 尚未提交的本机改动；来源提交号保存在 `motion-library/SOURCE_VERSION.json`。同步后检查模板目录并提交本仓库的更新。
+Video Motion 的 `previews/` 是本地生成物，未包含在它的 GitHub 提交中；同步脚本会保留本仓库已有预览，并列出新版登记表缺少的预览文件。缺少的文件须用同步后的模板源码重新渲染，检查画面后再提交。
+
 想单独浏览样式时，可以打开 [`motion-library/playground/index.html`](./motion-library/playground/index.html)。Playground 展示 9 个语义分类、31 种已验证视觉样式及真实动态样片；它是可选查看页，不是六步剪辑流程中的必经确认步骤。
 
 如果现有模板不适合当前内容，默认优先使用现有背景、纸张、人物、字体和基础组件组合当前镜头，而不是每遇到一个新稿子就重新开发模板。只有可重复使用的结构，才值得升级为正式模板。
