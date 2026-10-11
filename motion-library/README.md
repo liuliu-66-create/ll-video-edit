@@ -14,6 +14,8 @@
 - `playground`：可选的本地素材库展示页，包含真实动态样片和效果图缩略图。
 - `qa`：对齐辅助线和边界数量的内部检查结果。
 
+Video Edit 的 `library.json` 将 36 个 Playground 展示项分别登记为可选模板；若多个样式共用底层组件，也各有独立的 ID 和调用配置。`scripts/sync_motion_library.py` 从 Video Motion 导入新版本前会检查目录版本，发现覆盖这份对应关系的冲突时停止写入，需先合并目录。
+
 ## 已完成模板
 
 - 双向趋势：质量与价格变体已确认，仅作定性趋势示意；规则见 `template-rules/opposing-trends/TEMPLATE.md`。

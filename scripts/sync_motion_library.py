@@ -97,6 +97,11 @@ def main() -> None:
             incoming.append((relative, source_data))
     removed = sorted(tracked - blobs.keys())
     registry = json.loads(git(source, "cat-file", "blob", blobs["library.json"]))
+    local_registry_path = destination / "library.json"
+    local_registry = json.loads(local_registry_path.read_text(encoding="utf-8-sig")) if local_registry_path.is_file() else {}
+    local_catalog_version = local_registry.get("catalogVersion")
+    incoming_catalog_version = registry.get("catalogVersion")
+    catalog_conflict = bool(local_catalog_version and local_catalog_version != incoming_catalog_version)
     preview_paths = set()
     for template in registry.get("templates", []):
         for field in ("preview", "styleframe", "approvedDesign"):
@@ -118,11 +123,16 @@ def main() -> None:
         "removeTrackedStale": removed,
         "missingGeneratedPreviews": missing_previews,
         "previousSourceCommit": existing_version.get("sourceCommit"),
+        "localCatalogVersion": local_catalog_version,
+        "incomingCatalogVersion": incoming_catalog_version,
+        "catalogConflict": catalog_conflict,
         "mode": "apply" if args.apply else "check",
     }, ensure_ascii=False, indent=2))
 
     if not args.apply:
         return
+    if catalog_conflict:
+        raise RuntimeError("The incoming source catalog would replace Video Edit's selectable-template catalog; reconcile the catalogs before syncing")
     for relative, data in incoming:
         target = safe_target(destination, relative)
         target.parent.mkdir(parents=True, exist_ok=True)
