@@ -41,7 +41,7 @@ class UsageTests(unittest.TestCase):
                     self.assertIn("全片总次数",run.stdout)
     def test_nth_total_and_nonlibrary_break(self):
         r=check(shot("1",use()),shot("2"),shot("3",use()))
-        self.assertEqual(r["issues"], [])
+        self.assertTrue(any("template zigzag / Z: 2次，超过1次" in issue for issue in r["issues"]))
         self.assertEqual(r["rows"][2]["nth"],2)
         self.assertEqual(r["counts"]["template"]["zigzag / Z"],2)
         self.assertIn("具体动效汇总",markdown(r))
@@ -57,6 +57,7 @@ class UsageTests(unittest.TestCase):
     def test_same_shot_repeated_calls_and_layout_limit(self):
         r=check(shot("1",use(),use(),use()))
         self.assertEqual(r["counts"]["template"]["zigzag / Z"],3)
+        self.assertTrue(any("超过1次" in x for x in r["issues"]))
         self.assertTrue(any("超过2次" in x for x in r["issues"]))
     def test_unknown_candidate_and_forged_family_rejected(self):
         for value in [use("draft","D"),use("missing","M"),{**use(),"family":"fake"}]:

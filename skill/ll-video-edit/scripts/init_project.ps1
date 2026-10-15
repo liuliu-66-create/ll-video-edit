@@ -36,6 +36,7 @@ if (-not $statusAlreadyExisted) {
     $status = [ordered]@{
         schemaVersion = 1
         aspectRatio = "16:9"
+        inputMode = "pending"
         currentStep = 1
         state = "in_progress"
         confirmed = [ordered]@{

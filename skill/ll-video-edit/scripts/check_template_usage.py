@@ -31,7 +31,7 @@ def audit(plan, library):
     if not isinstance(shots, list) or not shots:
         raise ValueError("shots must be a non-empty chronological list")
     policy = library.get("selectionPolicy", {})
-    limits = {"family": policy.get("maxUsesPerFamily", 3), "layout": policy.get("maxUsesPerLayout", 2)}
+    limits = {"template": 1, "family": policy.get("maxUsesPerFamily", 3), "layout": policy.get("maxUsesPerLayout", 2)}
     for value in limits.values():
         if type(value) is not int or value < 1:
             raise ValueError("Invalid registry repetition limit")
